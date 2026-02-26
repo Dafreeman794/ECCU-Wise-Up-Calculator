@@ -1,0 +1,15 @@
+root {
+--main-blue:  #0054A4;
+--main-green: #0D674C;
+--lightblue: #E8F3FC;
+--darkblue: #1C316C;
+--darkgreen: #0B3D2E; 
+--complete-green: #1B7721;  
+}
+
+.headerspace > ul{
+display: flex;
+justify-content: flex-end;
+}
+
+
