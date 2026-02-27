@@ -1,15 +1,94 @@
-root {
---main-blue:  #0054A4;
---main-green: #0D674C;
---lightblue: #E8F3FC;
---darkblue: #1C316C;
---darkgreen: #0B3D2E; 
---complete-green: #1B7721;  
+:root {
+  --main-blue: #0054a4;
+  --main-green: #0d674c;
+  --lightblue: #e8f3fc;
+  --darkblue: #1c316c;
+  --darkgreen: #0b3d2e;
+  --complete-green: #1b7721;
 }
 
-.headerspace > ul{
-display: flex;
-justify-content: flex-end;
+.headerspace > ul {
+  display: flex;
+  justify-content: flex-end;
 }
 
+.header a {
+    text-transform: uppercase;
+}
 
+header > .top-bar {
+  background-color: white;
+  height: 30px;
+}
+
+.top-bar > nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.top-bar > nav > a {
+  color: var(--main-blue);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.top-bar > nav > a:hover {
+  color: var(--darkblue);
+}
+
+header > .main-bar {
+  background-color: var(--main-blue);
+  height: 3.5rem;
+}
+
+#steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    margin-top: 2rem;
+  }
+  
+  /* Line */
+  #steps::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #ddd;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
+
+    #steps a {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+  }
+
+  .circle.active {
+    color: white;
+    background-color: var(--main-blue)
+  }
