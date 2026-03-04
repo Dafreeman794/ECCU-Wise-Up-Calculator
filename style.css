@@ -7,12 +7,9 @@
   --complete-green: #1b7721;
 }
 
-.headerspace > ul {
-  display: flex;
-  justify-content: flex-end;
-}
 
-.header a {
+
+header a {
     text-transform: uppercase;
 }
 
@@ -90,5 +87,18 @@ header > .main-bar {
 
   .circle.active {
     color: white;
-    background-color: var(--main-blue)
+    background-color: var(--main-blue);
+    border: 3px solid var(--main-blue);
+  }
+
+  .step-content {
+    display: none;
+
+  }
+
+  .step-content.active {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.2rem;
   }
