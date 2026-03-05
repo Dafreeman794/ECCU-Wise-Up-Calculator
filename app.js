@@ -3,10 +3,10 @@ const overlay = document.getElementById("overlay");
 const careerTitle = document.getElementById("occupation")
 
 function createButtons(careers) {
-    careers.forEach(career => {
+    careers.forEach((career, index) => {
      const button = document.createElement("button");
      button.innerHTML = `${career.Occupation}: ${career.Salary}`;
-     button.classList.add(`${career.Occupation}`)
+     button.setAttribute("id", `${index}`);
         button.addEventListener("click", () => {
             careerTitle.innerHTML = `Future Career: ${career.Occupation}`;
             console.log(`Selected Career: ${career.Occupation}, Salary: ${career.Salary}`);
@@ -61,6 +61,37 @@ function createButtons(careers) {
 
         });
     });
+    function calcSaveChart() {
+        const inputs = document.getElementsByClassName("expense");
+        const savedExpenses = {};
+        let housing = 0;
+        let life = 0;
+        let essentials = 0;
+        let loans = 0;
+        let future = 0;
+
+        let total = 0;
+        inputs.forEach(input => {
+            total += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            savedExpenses[input.id] = Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            if(input.classList.contains("housing")) {
+                housing += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            }
+            else if(input.classList.contains("life")) {
+                life += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            }
+            else if(input.classList.contains("essentials")) {
+                essentials += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            }
+            else if(input.classList.contains("loans")) {
+                loans += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            }
+            else if(input.classList.contains("future")) {
+                future += Number(input.value.replace(/[^0-9]/g, '')) || 0;
+            }
+            localStorage.setItem("savedExpenses", JSON.stringify(savedExpenses));
+        });
+    }
 }
 
 
