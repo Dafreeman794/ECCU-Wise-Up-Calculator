@@ -17,18 +17,23 @@ header a {
 }
 
 header > .top-bar {
+  display: flex;
+  justify-content: flex-end;
   background-color: white;
   height: 30px;
 }
 
 .top-bar > nav {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   gap: 1rem;
   padding-right: 1rem;
+  margin-right: 3.5%;
 }
 
 .top-bar > nav > a {
+  display: flex;
   color: var(--main-blue);
   text-decoration: none;
   font-size: 0.8rem;
@@ -57,13 +62,19 @@ header > .main-bar {
   align-items: center;
   gap: 1rem;
   margin-left: 2rem;
+  margin-right: 3.5%;
 }
 
 .main-bar nav a {
   color: white;
   text-decoration: none;
-  font-size: .65rem;
+  font-size: .8rem;
   transition: all 0.3s ease;
+}
+
+.top-bar a:last-of-type img {
+  height: 20px;
+  width:20px;
 }
 
 #steps {
@@ -127,9 +138,47 @@ header > .main-bar {
     text-align: center;
     font-size: 1.2rem;
   }
+
+/*Footer*/
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
 #footer-apps {
     display: flex;
+    align-items: center;
     flex-direction: row;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 1rem;
 }
+
+#footer-apps img {
+  height: 32px;
+}
+
+
+
+#footerBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+#footerBottom ul:first-of-type a {
+  text-decoration: none;
+  color: #666;
+  font-size: 12px;
+}
+
+#footerLink {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--main-blue);
+}
+
+#footerLink a {
+  color: white;
+  text-decoration: none;
+}
+
