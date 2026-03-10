@@ -49,13 +49,15 @@ function init() {
     function createButtons(careers) {
         careers.forEach((career, index) => {
             const button = document.createElement("button");
+            const actualOverlay = document.getElementById("overlay-content");
+
             button.innerHTML = `${career.Occupation}: ${career.Salary}`;
             button.setAttribute("id", `${index}`);
             button.addEventListener("click", () => {
                 careerTitle.innerHTML = `Future Career: ${career.Occupation}`;
                 console.log(`Selected Career: ${career.Occupation}, Salary: ${career.Salary}`);
             });
-            overlay.appendChild(button);
+            actualOverlay.appendChild(button);
         });
     }
 
@@ -116,6 +118,9 @@ function init() {
         else if (grossIncome<= 28500) { netIncome = 16100 + (grossIncome - 16100) * 0.90; }
         else if (grossIncome <= 66500) { netIncome = 27260 + (grossIncome - 28500) * 0.88; }
         else { netIncome = 60700 + (grossIncome - 66500) * 0.78; }
+        netIncome -= grossIncome * 0.04;
+        netIncome -= grossIncome * 0.062;
+        netIncome -= grossIncome * 0.0125;
         return Math.roud(netIncome);
 
     }
